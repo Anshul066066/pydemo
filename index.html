@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Page Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #dynamic-content {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dynamic Website</h1>
+  <header>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('about')">About</button>
+    <button onclick="showSection('contact')">Contact</button>
+  </header>
+
+  <div id="dynamic-content">
+    <h2>Welcome to Home</h2>
+    <p>This is the home section. Here, you can find an overview of our website and the latest updates.</p>
+  </div>
+
+  <script>
+    function showSection(section) {
+      const dynamicDiv = document.getElementById('dynamic-content');
+
+      if (section === 'home') {
+        dynamicDiv.innerHTML = `
+          <h2>Welcome to Home</h2>
+          <p>This is the home section. Here, you can find an overview of our website and the latest updates.</p>
+        `;
+      } else if (section === 'about') {
+        dynamicDiv.innerHTML = `
+          <h2>About Us</h2>
+          <p>We are a team of dedicated individuals passionate about providing quality services to our users.</p>
+          <p>Our mission is to create simple yet powerful solutions for everyday needs.</p>
+        `;
+      } else if (section === 'contact') {
+        dynamicDiv.innerHTML = `
+          <h2>Contact Us</h2>
+          <p>Have questions or feedback? We'd love to hear from you!</p>
+          <ul>
+            <li>Email: contact@dynamicwebsite.com</li>
+            <li>Phone: +123 456 7890</li>
+            <li>Address: 123 Dynamic St, Web City, WW 56789</li>
+          </ul>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
